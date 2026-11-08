@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Appointment Booking</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #eaf0f8;
+            padding: 40px 15px;
+        }
+
+        .container {
+            background: white;
+            max-width: 420px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px #cbd5e1;
+        }
+
+        h1 {
+            color: #142d52;
+            text-align: center;
+        }
+
+        p {
+            color: #64748b;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            color: #142d52;
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            margin-top: 7px;
+            box-sizing: border-box;
+            border: 1px solid #cbd5e1;
+            border-radius: 7px;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            margin-top: 22px;
+            background: #142d52;
+            color: white;
+            border: none;
+            border-radius: 7px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: #254b7d;
+        }
+
+        .error {
+            color: #dc2626;
+            background: #fee2e2;
+            padding: 10px;
+            border-radius: 7px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Book an Appointment</h1>
+    <p>Choose a service and reserve your time.</p>
+
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% endif %}
+
+    <form method="POST">
+
+        <label>Your Name</label>
+        <input type="text" name="name"
+               placeholder="Enter your name" required>
+
+        <label>Email Address</label>
+        <input type="email" name="email"
+               placeholder="Enter your email" required>
+
+        <label>Select a Service</label>
+        <select name="service" required>
+            <option value="">Choose a service</option>
+            <option value="Consultation">Consultation</option>
+            <option value="Meeting">Meeting</option>
+            <option value="Personal Session">Personal Session</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <label>Appointment Date</label>
+        <input type="date" name="date"
+               min="{{ today }}" required>
+
+        <label>Appointment Time</label>
+        <input type="time" name="time" required>
+
+        <button type="submit">Book Appointment</button>
+
+    </form>
+
+</div>
+
+</body>
+</html>

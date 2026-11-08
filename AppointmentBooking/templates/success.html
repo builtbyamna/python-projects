@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Booking Confirmed</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #eaf0f8;
+            text-align: center;
+            padding: 60px 15px;
+        }
+
+        .box {
+            background: white;
+            max-width: 420px;
+            margin: auto;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px #cbd5e1;
+        }
+
+        h1 {
+            color: #142d52;
+        }
+
+        p {
+            color: #475569;
+            margin: 18px;
+        }
+
+        a {
+            display: inline-block;
+            background: #142d52;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 7px;
+            text-decoration: none;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <h1>Booking Confirmed!</h1>
+
+    <p>Thank you, {{ name }}!</p>
+
+    <p><b>Service:</b> {{ service }}</p>
+
+    <p><b>Date:</b> {{ day }}</p>
+
+    <p><b>Time:</b> {{ time }}</p>
+
+    <a href="/">Book Another Appointment</a>
+
+</div>
+
+</body>
+</html>
